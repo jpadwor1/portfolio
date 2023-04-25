@@ -76,11 +76,11 @@ h2, h3 {
 }
 
 .layer1 {
-    background-image: url(/Images/peaks-top.svg);
+    background-image: url(Images/peaks-top.svg);
 }
 
 .layer2 {
-    background-image:url(/Images/peaks-bottom.svg)
+    background-image:url(Images/peaks-bottom.svg)
 }
 
 /* Skill Section */
@@ -281,16 +281,16 @@ circle {
 }
 
 #project1-link::before{
-    background-image: url(/Images/NeverRelax.png);
+    background-image: url(Images/NeverRelax.png);
 }
 
 #project2-link::before{
     right: 10%;
-    background-image: url(/Images/SelfTaughDev.png);
+    background-image: url(Images/SelfTaughDev.png);
 }
 
 #project3-link::before{
-    background-image: url(/Images/Hydroponics.png);
+    background-image: url(Images/Hydroponics.png);
 }
 .project-image:hover #project1-link::before, 
 .project-image:hover #project2-link::before,
