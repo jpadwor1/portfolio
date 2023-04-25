@@ -170,8 +170,8 @@ circle {
     
 }
 
-#skill-progress1, 
-#skill-progress2 {
+.skill1-progress, 
+.skill2-progress {
     animation: animate-100  2s linear forwards;
 }
 
@@ -181,7 +181,7 @@ circle {
     }
 }
 
-#skill-progress3 {
+.skill3-progress {
     animation: animate-90 2s linear forwards;
 }
 
@@ -191,8 +191,8 @@ circle {
     }
 }
 
-#skill-progress5,
-#skill-progress4 {
+.skill4-progress,
+.skill5-progress {
     animation: animate-60 2s linear forwards;
 }
 
@@ -202,7 +202,7 @@ circle {
     }
 }
 
-#skill-progress6 {
+.skill6-progress {
     animation: animate-30 2s linear forwards;
 }
 

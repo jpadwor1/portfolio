@@ -1,11 +1,13 @@
 // Skill Animations
 
-function Skill(name, percent, elementId, timer) {
+function Skill(name, percent, elementId, timer, innerElement, progressClass) {
     this.name = name;
     this.percent = percent;
     this.element = document.getElementById(elementId);
     this.counter = 0;
     this.timer = timer;
+    this.progressClass = progressClass;
+    this.innerElement = document.getElementById(innerElement);
 }
 
 Skill.prototype.animate = function(){
@@ -20,17 +22,41 @@ Skill.prototype.animate = function(){
 }
 
 const skills = [
-    new Skill("skill1", 100, "skill1", 19),
-    new Skill("skill2", 100, "skill2", 19),
-    new Skill("skill3", 90, "skill3", 21),
-    new Skill("skill4", 60, "skill4", 32),
-    new Skill("skill5", 60, "skill5", 32),
-    new Skill("skill6", 30, "skill6", 65)
+  new Skill("skill1", 100, "skill1", 19, "inner-skill1", "skill1-progress"),
+  new Skill("skill2", 100, "skill2", 19,"inner-skill2", "skill2-progress"),
+  new Skill("skill3", 90, "skill3", 21,"inner-skill3", "skill3-progress"),
+  new Skill("skill4", 60, "skill4", 32,"inner-skill4", "skill4-progress"),
+  new Skill("skill5", 60, "skill5", 32,"inner-skill5", "skill5-progress"),
+  new Skill("skill6", 30, "skill6", 65,"inner-skill6", "skill6-progress")
 ];
 
-skills.forEach(skill => {
-    skill.animate();
-});
+
+
+function startAnimation() {
+  skills.forEach(skill => {
+      
+      skill.animate();
+      skill.innerElement.classList.add(skill.progressClass);
+  });
+
+}
+const options = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+      if (entry.isIntersecting) {
+          startAnimation();
+          observer.unobserve(entry.target); // Unobserve the target after animation starts
+      }
+  });
+}, options);
+
+const target = document.querySelector('#skill-percent');
+observer.observe(target);
 
 // Contact Form Logic
 
