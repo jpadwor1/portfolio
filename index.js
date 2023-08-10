@@ -43,7 +43,7 @@ function startAnimation() {
 const options = {
   root: null,
   rootMargin: '0px',
-  threshold: 0.1
+  threshold: 0.9
 };
 
 const observer = new IntersectionObserver((entries, observer) => {
